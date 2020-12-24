@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinForms.JavaScriptInterpreter.MainPage"
+             BackgroundColor="{DynamicResource BackgroundColor}"
+             Padding="10,30">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition x:Name="dividerRow" Height="2"/>
+            <RowDefinition x:Name="pickerRow" Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0"  Text="{Binding Title}" FontSize="Large" FontAttributes="Bold"
+                TextColor="{DynamicResource PrimaryTextColor}"/>
+
+        <Frame Grid.Row="1" BorderColor="{DynamicResource AccentColor}">
+
+            <Image Source="{Binding Icon}"  WidthRequest="140" HeightRequest="140" HorizontalOptions="Center" VerticalOptions="Center"/>
+        </Frame>
+
+        <Editor Grid.Row="2" x:Name="scriptEditor"
+                Text="{Binding ScriptContent}"
+                BackgroundColor="Transparent"
+                TextColor="{DynamicResource SecondaryTextColor}"/>
+
+        <Button Grid.Row="3"
+                Text="Run Script"
+                BackgroundColor="{DynamicResource AltBackgroundColor}"
+                TextColor="{DynamicResource AccentColor}"
+                Command="{Binding RunScriptCommand}"/>
+
+        <ContentView Grid.Row="4" Margin="-10,0" BackgroundColor="{DynamicResource AccentColor}"/>
+
+        <Picker Grid.Row="5"
+                ItemDisplayBinding="{Binding Name}"
+                SelectedIndex="{Binding SelectedScriptIndex}"
+                BackgroundColor="Transparent"
+                TextColor="{DynamicResource PrimaryTextColor}"
+                SelectedIndexChanged="Picker_SelectedIndexChanged"
+                ItemsSource="{Binding Scripts}"/>
+
+    </Grid>
+
+</ContentPage>

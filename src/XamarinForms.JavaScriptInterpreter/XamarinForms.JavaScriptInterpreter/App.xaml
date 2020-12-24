@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinForms.JavaScriptInterpreter.App" xmlns:themes="clr-namespace:XamarinForms.JavaScriptInterpreter.Themes">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <themes:LightTheme/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <x:String x:Key="themeName">Light</x:String>
+            
+            <Style TargetType="Label">
+                <Setter Property="TextColor"
+                        Value="{DynamicResource PrimaryTextColor}" />
+            </Style>
+            
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
