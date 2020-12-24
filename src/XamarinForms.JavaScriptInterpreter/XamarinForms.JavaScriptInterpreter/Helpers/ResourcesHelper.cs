@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 
 
-namespace XamarinForms.JavaScriptInterpreter
+namespace XamarinForms.JavaScriptInterpreter.Helpers
 {
     /// <summary>
     /// Helper class for locating and reading embedded resources in an assembly.

@@ -25,6 +25,7 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Themes\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Resources\SetAppIcon.js" />

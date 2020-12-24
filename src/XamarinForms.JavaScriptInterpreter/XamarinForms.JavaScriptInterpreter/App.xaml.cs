@@ -4,6 +4,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XamarinForms.JavaScriptInterpreter.Themes;
 
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+
 namespace XamarinForms.JavaScriptInterpreter
 {
     public partial class App : Application

@@ -6,6 +6,7 @@ using Jint;
 using Jint.Native;
 using PropertyChanged;
 using Xamarin.Forms;
+using XamarinForms.JavaScriptInterpreter.Helpers;
 
 namespace XamarinForms.JavaScriptInterpreter
 {
@@ -21,11 +22,14 @@ namespace XamarinForms.JavaScriptInterpreter
                     return;
                 }
 
-                var jint = new global::Jint.Engine();
+                using (Profiler.Profile(SelectedScript.Name))
+                {
+                    var jint = new global::Jint.Engine();
 
-                jint.SetValue("context", this);
+                    jint.SetValue("context", this);
 
-                jint.Execute(ScriptContent);
+                    jint.Execute(ScriptContent);
+                }
             });
 
             ScriptContent = SelectedScript.Content;
