@@ -24,7 +24,7 @@ namespace XamarinForms.JavaScriptInterpreter
 
                 using (Profiler.Profile(SelectedScript.Name))
                 {
-                    var jint = new global::Jint.Engine();
+                    var jint = new Engine();
 
                     jint.SetValue("context", this);
 
