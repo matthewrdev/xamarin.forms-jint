@@ -135,5 +135,10 @@ namespace XamarinForms.JavaScriptInterpreter
         {
             Icon = icon.ToString();
         }
+
+        public void Toast(JsValue message)
+        {
+            UserDialogs.Instance.Toast(message.AsString());
+        }
     }
 }

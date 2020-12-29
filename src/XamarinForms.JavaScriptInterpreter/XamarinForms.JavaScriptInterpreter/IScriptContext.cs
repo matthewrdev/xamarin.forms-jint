@@ -18,5 +18,7 @@ namespace XamarinForms.JavaScriptInterpreter
         void ActionSheet(JsValue title, JsValue options, JsValue callback);
 
         void Alert(JsValue title, JsValue message);
+
+        void Toast(JsValue message);
     }
 }

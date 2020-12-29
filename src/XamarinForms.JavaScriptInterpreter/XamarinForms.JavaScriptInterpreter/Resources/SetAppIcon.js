@@ -6,6 +6,7 @@ var setAppIconCallback = function (choice) {
     }
     else {
         context.SetAppIcon(choice);
+        context.Toast("App icon changed to " + choice);
     }
 
 }

@@ -9,6 +9,7 @@ if (currentTheme == 'Dark') {
 var setThemeFunc = function (result) {
     if (result === true) {
         context.SetAppTheme(newTheme);
+        context.Toast("App theme changed to " + newTheme);
     }
 }
 
