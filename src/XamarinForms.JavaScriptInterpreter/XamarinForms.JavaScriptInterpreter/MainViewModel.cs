@@ -10,6 +10,7 @@ using XamarinForms.JavaScriptInterpreter.Helpers;
 
 namespace XamarinForms.JavaScriptInterpreter
 {
+
     [AddINotifyPropertyChangedInterface]
     public class MainViewModel : IScriptContext
     {
@@ -25,7 +26,6 @@ namespace XamarinForms.JavaScriptInterpreter
                 using (Profiler.Profile(SelectedScript.Name))
                 {
                     var jint = new Engine();
-
                     jint.SetValue("context", this);
 
                     jint.Execute(ScriptContent);
@@ -65,7 +65,7 @@ namespace XamarinForms.JavaScriptInterpreter
         [DependsOn(nameof(Scripts), nameof(SelectedScriptIndex))]
         public Script SelectedScript => Scripts != null ? Scripts[SelectedScriptIndex] : null;
 
-        public ICommand RunScriptCommand { get; } 
+        public ICommand RunScriptCommand { get; }
 
         public void ActionSheet(JsValue title, JsValue options, JsValue callback)
         {
@@ -91,7 +91,7 @@ namespace XamarinForms.JavaScriptInterpreter
             config.Title = title.AsString();
             config.Message = message.AsString();
 
-            UserDialogs.Instance.Alert (config);
+            UserDialogs.Instance.Alert(config);
         }
 
         public void Confirm(JsValue title, JsValue message, JsValue callback)
